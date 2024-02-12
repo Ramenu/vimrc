@@ -69,6 +69,7 @@ vim.g.mapleader = ',' -- Leader key
 local colors = {
 	black            = 232,
 	light_black      = 233,
+	dark_grey        = 234,
 	white            = 15,
 	yellow           = 11,
 	orange           = 208
@@ -76,6 +77,7 @@ local colors = {
 
 -- Customizing the look of the editor
 local BG_COLOR = colors.light_black
+local BG_SECONDARY_COLOR = colors.dark_grey
 local FG_COLOR = colors.white
 vim.api.nvim_set_hl(0, 'Normal', {ctermbg=BG_COLOR, ctermfg=FG_COLOR})
 vim.api.nvim_set_hl(0, 'NormalAlt', {ctermbg=BG_COLOR, ctermfg=FG_COLOR})
@@ -83,6 +85,7 @@ vim.api.nvim_set_hl(0, 'StatusLine', {ctermbg=BG_COLOR})
 vim.api.nvim_set_hl(0, 'ErrorMsg', {ctermbg=BG_COLOR})
 vim.api.nvim_set_hl(0, 'NonText', {ctermbg=BG_COLOR, ctermfg=BG_COLOR})
 vim.api.nvim_set_hl(0, 'MsgArea', {ctermbg=BG_COLOR, ctermfg=FG_COLOR})
+vim.api.nvim_set_hl(0, 'Pmenu', {ctermbg=BG_SECONDARY_COLOR, ctermfg=FG_COLOR})
 
 -- Initialize Plugins
 local actions = require('telescope.actions')
@@ -144,10 +147,16 @@ cmp.setup({
 		['`'] = cmp.mapping.abort(),
 		['<tab>'] = cmp.mapping.confirm({ select = true }),
 	}),
-	--window = {
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered()
-	--},
+	window = {
+		completion = cmp.config.window.bordered({
+			border = "double",
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
+		}),
+		documentation = cmp.config.window.bordered({
+			border = "double",
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None"
+		}),
+	},
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
@@ -185,7 +194,6 @@ vim.keymap.set('n', '<leader>l', '<Cmd>:vertical resize +5<CR>', {})
 vim.keymap.set('n', '<leader>h', '<Cmd>:vertical resize -5<CR>', {})
 vim.keymap.set('n', '<leader>1', '<Cmd>:bp<CR>', {})
 vim.keymap.set('n', '<leader>2', '<Cmd>:bn<CR>', {})
---vim.cmd 'nnoremap <leader>\\ :buffers<CR>:buffer<Space>'
 
 -- Map split focus keys
 map('n', '<C-h>', '<C-w>h')

@@ -21,7 +21,7 @@
 	url = https://github.com/nvim-treesitter/nvim-treesitter
 [submodule "plugged/lualine.nvim"]
 	path = plugged/lualine.nvim
-	url = https://github.com/nvim-lualine/lualine.nvim
+	url = https://github.com/Ramenu/lualine.nvim
 [submodule "plugged/plenary.nvim"]
 	path = plugged/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim
