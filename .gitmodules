@@ -1,0 +1,66 @@
+[submodule "plugged/vim-monokai"]
+	path = plugged/vim-monokai
+	url = https://github.com/sickill/vim-monokai
+[submodule "plugged/gruvbox"]
+	path = plugged/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "plugged/darcula"]
+	path = plugged/darcula
+	url = https://github.com/blueshirts/darcula
+[submodule "plugged/vim-monokai-pro"]
+	path = plugged/vim-monokai-pro
+	url = https://github.com/phanviet/vim-monokai-pro
+[submodule "plugged/nvim-web-devicons"]
+	path = plugged/nvim-web-devicons
+	url = https://github.com/phanviet/nvim-web-devicons
+[submodule "plugged/tree-sitter"]
+	path = plugged/tree-sitter
+	url = https://github.com/tree-sitter/tree-sitter
+[submodule "plugged/nvim-treesitter"]
+	path = plugged/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "plugged/lualine.nvim"]
+	path = plugged/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule "plugged/plenary.nvim"]
+	path = plugged/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "plugged/telescope.nvim"]
+	path = plugged/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "plugged/nvim-tree.lua"]
+	path = plugged/nvim-tree.lua
+	url = https://github.com/nvim-tree/nvim-tree.lua
+[submodule "plugged/lazygit.nvim"]
+	path = plugged/lazygit.nvim
+	url = https://github.com/kdheepak/lazygit.nvim
+[submodule "plugged/nvim-lspconfig"]
+	path = plugged/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "plugged/cmp-nvim-lsp"]
+	path = plugged/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "plugged/cmp-buffer"]
+	path = plugged/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "plugged/cmp-path"]
+	path = plugged/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule "plugged/cmp-cmdline"]
+	path = plugged/cmp-cmdline
+	url = https://github.com/hrsh7th/cmp-cmdline
+[submodule "plugged/cmp-git"]
+	path = plugged/cmp-git
+	url = https://github.com/petertriho/cmp-git
+[submodule "plugged/LuaSnip"]
+	path = plugged/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "plugged/cmp_luasnip"]
+	path = plugged/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "plugged/nvim-cmp"]
+	path = plugged/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "plugged/nvim-autopairs"]
+	path = plugged/nvim-autopairs
+	url = https://github.com/windwp/nvim-autopairs
