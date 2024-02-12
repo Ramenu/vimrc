@@ -67,11 +67,11 @@ vim.g.mapleader = ',' -- Leader key
 --vim.o.background = 'dark'
 
 local colors = {
-	black      = 232,
-	light_black = 233,
-	white      = 15,
-	yellow     = 11,
-	orange     = 208
+	black            = 232,
+	light_black      = 233,
+	white            = 15,
+	yellow           = 11,
+	orange           = 208
 }
 
 -- Customizing the look of the editor
@@ -155,17 +155,6 @@ cmp.setup({
 	{{ name = 'buffer' }}),
 })
 
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources(
-	{
-		{ name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-    }, 
-	{
-      { name = 'buffer' },
-	}
-)})
-
 -- Set up lsgconfig
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
@@ -194,6 +183,11 @@ vim.keymap.set('n', '<leader>t', api.tree.toggle, {})
 vim.keymap.set('n', '<leader>g', '<Cmd>:LazyGit<CR>', {})
 vim.keymap.set('n', '<leader>l', '<Cmd>:vertical resize +5<CR>', {})
 vim.keymap.set('n', '<leader>h', '<Cmd>:vertical resize -5<CR>', {})
+vim.keymap.set('n', '<leader>b', '<Cmd>:bn<CR>', {})
+vim.keymap.set('n', '<leader>1', '<Cmd>:bn<CR>', {})
+vim.keymap.set('n', '<leader>2', '<Cmd>:bn2<CR>', {})
+vim.keymap.set('n', '<leader>3', '<Cmd>:bn3<CR>', {})
+--vim.cmd 'nnoremap <leader>\\ :buffers<CR>:buffer<Space>'
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
