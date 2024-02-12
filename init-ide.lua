@@ -43,6 +43,16 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
+-- Disabling `netrw` is strongly advised by nvim-tree.
+-- `netrw` is a standard neovim plugin that is enabled
+-- by default. It provides, amongst other functionality,
+-- a file/directory browser. 
+--
+-- It interferes with nvim-tree and the intended user
+-- experience is nvim-tree replacing the `netrw` browser.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.wo.number = true -- Show line numbers
 vim.o.ruler = true
 vim.o.scl = 'no' -- Hide annoying sidebar next to line numbers
