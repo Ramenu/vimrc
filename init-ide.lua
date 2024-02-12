@@ -165,7 +165,6 @@ lspconfig.clangd.setup { capabilities = capabilities }
 -- Language server for Go
 lspconfig.golangci_lint_ls.setup { capabilities = capabilities }
 
--- Remap keybindings
 local function map(mode, lhs, rhs, opts)
   local options = { noremap=true, silent=true }
   if opts then
@@ -176,6 +175,7 @@ end
 
 local builtin = require('telescope.builtin')
 local api = require('nvim-tree.api')
+-- Remap keybindings
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>,', builtin.buffers, {})
@@ -183,12 +183,13 @@ vim.keymap.set('n', '<leader>t', api.tree.toggle, {})
 vim.keymap.set('n', '<leader>g', '<Cmd>:LazyGit<CR>', {})
 vim.keymap.set('n', '<leader>l', '<Cmd>:vertical resize +5<CR>', {})
 vim.keymap.set('n', '<leader>h', '<Cmd>:vertical resize -5<CR>', {})
-vim.keymap.set('n', '<leader>b', '<Cmd>:bn<CR>', {})
-vim.keymap.set('n', '<leader>1', '<Cmd>:bn<CR>', {})
-vim.keymap.set('n', '<leader>2', '<Cmd>:bn2<CR>', {})
-vim.keymap.set('n', '<leader>3', '<Cmd>:bn3<CR>', {})
+vim.keymap.set('n', '<leader>1', '<Cmd>:bp<CR>', {})
+vim.keymap.set('n', '<leader>2', '<Cmd>:bn<CR>', {})
 --vim.cmd 'nnoremap <leader>\\ :buffers<CR>:buffer<Space>'
+
+-- Map split focus keys
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
+
