@@ -14,9 +14,9 @@ Plug 'nvim-tree/nvim-web-devicons'
 -- IDE Plugins
 	Plug 'tree-sitter/tree-sitter' -- Parser Generator Tool (Dependency for other plugins)
 	Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- Advanced treesitter based syntax highlighting
-	Plug 'nvim-lualine/lualine.nvim' -- Status/Tabline
+	Plug 'Ramenu/lualine.nvim' -- Status/Tabline
 	Plug 'nvim-lua/plenary.nvim' -- Dependency of Telescope
-	Plug('nvim-telescope/telescope.nvim', {tag = '0.1.5'}) -- Fuzzy Finder
+	Plug('nvim-telescope/telescope.nvim', {tag = '0.1.5', frozen = 1}) -- Fuzzy Finder
 	Plug 'nvim-tree/nvim-tree.lua' -- File Explorer
 	Plug 'kdheepak/lazygit.nvim' -- Lazygit Integration
 	Plug 'windwp/nvim-autopairs' -- Autopairs
@@ -31,8 +31,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 		Plug 'L3MON4D3/LuaSnip'
 		Plug 'saadparwaiz1/cmp_luasnip'
 	Plug 'hrsh7th/nvim-cmp'	
-
-
+	Plug 'Ramenu/nvim-clc' -- Calculator
 vim.call('plug#end')
 
 -- Searching for the python provider makes neovim start
@@ -92,6 +91,7 @@ local actions = require('telescope.actions')
 require('lualine').setup()
 require('nvim-tree').setup()
 require('nvim-autopairs').setup()
+require('nvim-clc').setup()
 require'telescope'.setup {
 	defaults = {
 		mappings = {
@@ -145,7 +145,7 @@ cmp.setup({
 		['-'] = cmp.mapping.select_prev_item(),
 		['='] = cmp.mapping.select_next_item(),
 		['`'] = cmp.mapping.abort(),
-		['<tab>'] = cmp.mapping.confirm({ select = true }),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
 	}),
 	window = {
 		completion = cmp.config.window.bordered({

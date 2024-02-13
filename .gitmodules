@@ -64,3 +64,6 @@
 [submodule "plugged/nvim-autopairs"]
 	path = plugged/nvim-autopairs
 	url = https://github.com/windwp/nvim-autopairs
+[submodule "plugged/nvim-clc"]
+	path = plugged/nvim-clc
+	url = https://github.com/Ramenu/nvim-clc
