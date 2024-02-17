@@ -67,3 +67,6 @@
 [submodule "plugged/nvim-clc"]
 	path = plugged/nvim-clc
 	url = https://github.com/Ramenu/nvim-clc
+[submodule "plugged/nvim-cmdrun"]
+	path = plugged/nvim-cmdrun
+	url = https://github.com/Ramenu/nvim-cmdrun
