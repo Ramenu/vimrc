@@ -32,6 +32,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 		Plug 'saadparwaiz1/cmp_luasnip'
 	Plug 'hrsh7th/nvim-cmp'	
 	Plug 'Ramenu/nvim-clc' -- Calculator
+	Plug 'Ramenu/nvim-cmdrun' -- Command Runner
 vim.call('plug#end')
 
 -- Searching for the python provider makes neovim start
@@ -88,6 +89,7 @@ vim.api.nvim_set_hl(0, 'Pmenu', {ctermbg=BG_SECONDARY_COLOR, ctermfg=FG_COLOR})
 
 -- Initialize Plugins
 local actions = require('telescope.actions')
+local cmdrun = require('nvim-cmdrun').cmdrun('./.nvim/tasks.txt')
 require('lualine').setup()
 require('nvim-tree').setup()
 require('nvim-autopairs').setup()
@@ -185,6 +187,7 @@ end
 
 local builtin = require('telescope.builtin')
 local api = require('nvim-tree.api')
+
 -- Remap keybindings
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -195,6 +198,9 @@ vim.keymap.set('n', '<leader>l', '<Cmd>:vertical resize +5<CR>', {})
 vim.keymap.set('n', '<leader>h', '<Cmd>:vertical resize -5<CR>', {})
 vim.keymap.set('n', '<leader>1', '<Cmd>:bp<CR>', {})
 vim.keymap.set('n', '<leader>2', '<Cmd>:bn<CR>', {})
+if cmdrun then
+	vim.keymap.set('n', '<leader>r', '<Cmd>:!'..cmdrun['run']..'<CR>')
+end
 
 -- Map split focus keys
 map('n', '<C-h>', '<C-w>h')
