@@ -17,7 +17,6 @@ Plug 'nvim-tree/nvim-web-devicons'
 	Plug 'Ramenu/lualine.nvim' -- Status/Tabline
 	Plug 'nvim-lua/plenary.nvim' -- Dependency of Telescope
 	Plug('nvim-telescope/telescope.nvim', {tag = '0.1.5', frozen = 1}) -- Fuzzy Finder
-	Plug 'nvim-tree/nvim-tree.lua' -- File Explorer
 	Plug 'kdheepak/lazygit.nvim' -- Lazygit Integration
 	Plug 'windwp/nvim-autopairs' -- Autopairs
 	-- Dependencies for nvim-cmp
@@ -91,7 +90,6 @@ vim.api.nvim_set_hl(0, 'Pmenu', {ctermbg=BG_SECONDARY_COLOR, ctermfg=FG_COLOR})
 local actions = require('telescope.actions')
 local cmdrun = require('nvim-cmdrun').cmdrun('./.nvim/tasks.txt')
 require('lualine').setup()
-require('nvim-tree').setup()
 require('nvim-autopairs').setup()
 require('nvim-clc').setup()
 require'telescope'.setup {
@@ -186,13 +184,11 @@ local function map(mode, lhs, rhs, opts)
 end
 
 local builtin = require('telescope.builtin')
-local api = require('nvim-tree.api')
 
 -- Remap keybindings
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>,', builtin.buffers, {})
-vim.keymap.set('n', '<leader>t', api.tree.toggle, {})
 vim.keymap.set('n', '<leader>g', '<Cmd>:LazyGit<CR>', {})
 vim.keymap.set('n', '<leader>l', '<Cmd>:vertical resize +5<CR>', {})
 vim.keymap.set('n', '<leader>h', '<Cmd>:vertical resize -5<CR>', {})
