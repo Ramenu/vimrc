@@ -12,7 +12,7 @@
 	url = https://github.com/phanviet/vim-monokai-pro
 [submodule "plugged/nvim-web-devicons"]
 	path = plugged/nvim-web-devicons
-	url = https://github.com/phanviet/nvim-web-devicons
+	url = https://github.com/nvim-tree/nvim-web-devicons
 [submodule "plugged/tree-sitter"]
 	path = plugged/tree-sitter
 	url = https://github.com/tree-sitter/tree-sitter
