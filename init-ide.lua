@@ -142,8 +142,8 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		['-'] = cmp.mapping.select_prev_item(),
-		['='] = cmp.mapping.select_next_item(),
+		--['-'] = cmp.mapping.select_prev_item(),
+		--['='] = cmp.mapping.select_next_item(),
 		['`'] = cmp.mapping.abort(),
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
 		['<Tab>'] = cmp.mapping.confirm({ select = true }),
