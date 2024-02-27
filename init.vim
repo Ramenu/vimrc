@@ -1,7 +1,6 @@
 call plug#begin()
 
 " Themes
-Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox' 
 Plug 'blueshirts/darcula', {'for': 'java'}
 Plug 'phanviet/vim-monokai-pro', {'for': ['python', 'go']}
@@ -30,9 +29,7 @@ set mouse=a " Enable mouse support
 set clipboard+=unnamedplus
 
 " Set colorscheme based on the file extension
-if ext == 'txt' || ext == ''
-	colorscheme monokai
-elseif ext == 'py' || ext == 'go'
+if ext == 'py' || ext == 'go'
 	colorscheme monokai_pro
 elseif ext == 'java'
 	colorscheme darcula

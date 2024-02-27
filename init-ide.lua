@@ -187,9 +187,9 @@ local builtin = require('telescope.builtin')
 
 -- Remap keybindings
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>,', builtin.buffers, {})
-vim.keymap.set('n', '<leader>g', '<Cmd>:LazyGit<CR>', {})
+vim.keymap.set('n', '<leader>lg', '<Cmd>:LazyGit<CR>', {})
 vim.keymap.set('n', '<leader>l', '<Cmd>:vertical resize +5<CR>', {})
 vim.keymap.set('n', '<leader>h', '<Cmd>:vertical resize -5<CR>', {})
 vim.keymap.set('n', '<leader>1', '<Cmd>:bp<CR>', {})
