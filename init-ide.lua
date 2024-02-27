@@ -58,17 +58,23 @@ vim.o.scl = 'no' -- Hide annoying sidebar next to line numbers
 vim.opt.wrap = false -- Don't wrap lines
 vim.opt.tabstop = 4 -- Number of spaces tabs count for
 vim.opt.shiftwidth = 4 -- Number of spaces to use for autoindent
-vim.cmd 'colorscheme gruvbox' -- Set default theme
 vim.o.cmdheight = 0 -- Hide the command line
 vim.opt.clipboard = 'unnamedplus' -- Share clipboards with system
 vim.o.laststatus = 3
 vim.g.mapleader = ',' -- Leader key
---vim.o.background = 'dark'
+
+-- Go Project?
+if io.open('./go.mod', 'r') ~= nil then
+	vim.cmd 'colorscheme monokai_pro'
+else
+	vim.cmd 'colorscheme gruvbox' -- Set default theme
+end
 
 local colors = {
 	black            = 232,
 	light_black      = 233,
 	dark_grey        = 234,
+	light_grey       = 243,
 	white            = 15,
 	yellow           = 11,
 	orange           = 208
@@ -85,6 +91,7 @@ vim.api.nvim_set_hl(0, 'ErrorMsg', {ctermbg=BG_COLOR})
 vim.api.nvim_set_hl(0, 'NonText', {ctermbg=BG_COLOR, ctermfg=BG_COLOR})
 vim.api.nvim_set_hl(0, 'MsgArea', {ctermbg=BG_COLOR, ctermfg=FG_COLOR})
 vim.api.nvim_set_hl(0, 'Pmenu', {ctermbg=BG_SECONDARY_COLOR, ctermfg=FG_COLOR})
+vim.api.nvim_set_hl(0, 'LineNr', {ctermbg=BG_COLOR, ctermfg=colors.light_grey})
 
 -- Initialize Plugins
 local actions = require('telescope.actions')
@@ -173,7 +180,7 @@ lspconfig.rust_analyzer.setup { capabilities = capabilities }
 -- Language server for C, C++, Obj-C, CUDA
 lspconfig.clangd.setup { capabilities = capabilities }
 -- Language server for Go
-lspconfig.golangci_lint_ls.setup { capabilities = capabilities }
+lspconfig.gopls.setup { capabilities = capabilities }
 
 local function map(mode, lhs, rhs, opts)
   local options = { noremap=true, silent=true }
