@@ -63,12 +63,7 @@ vim.opt.clipboard = 'unnamedplus' -- Share clipboards with system
 vim.o.laststatus = 3
 vim.g.mapleader = ',' -- Leader key
 
--- Go Project?
-if io.open('./go.mod', 'r') ~= nil then
-	vim.cmd 'colorscheme monokai_pro'
-else
-	vim.cmd 'colorscheme gruvbox' -- Set default theme
-end
+vim.cmd 'colorscheme gruvbox' -- Set default theme
 
 local colors = {
 	black            = 232,
@@ -115,7 +110,7 @@ require'telescope'.setup {
 
 require'nvim-treesitter.configs'.setup {
 	-- parsers that should always be installed
-	ensure_installed = {'c', 'cpp', 'nasm', 'python', 'rust', 'go'},
+	ensure_installed = {'c', 'cpp', 'python', 'rust'},
 	-- Automatically install missing dependencies when entering buffer
 	-- Recommendation: set to false if you don't have `tree-sitter` CLI 
 	-- installed locally
@@ -179,8 +174,6 @@ local lspconfig = require('lspconfig')
 lspconfig.rust_analyzer.setup { capabilities = capabilities }
 -- Language server for C, C++, Obj-C, CUDA
 lspconfig.clangd.setup { capabilities = capabilities }
--- Language server for Go
-lspconfig.gopls.setup { capabilities = capabilities }
 
 local function map(mode, lhs, rhs, opts)
   local options = { noremap=true, silent=true }
