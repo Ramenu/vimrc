@@ -16,7 +16,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 	Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) -- Advanced treesitter based syntax highlighting
 	Plug 'Ramenu/lualine.nvim' -- Status/Tabline
 	Plug 'nvim-lua/plenary.nvim' -- Dependency of Telescope
-	Plug('nvim-telescope/telescope.nvim', {tag = '0.1.5', frozen = 1}) -- Fuzzy Finder
+	Plug('nvim-telescope/telescope.nvim', {tag = '0.1.6', frozen = 1}) -- Fuzzy Finder
 	Plug 'kdheepak/lazygit.nvim' -- Lazygit Integration
 	Plug 'windwp/nvim-autopairs' -- Autopairs
 	-- Dependencies for nvim-cmp
