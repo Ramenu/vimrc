@@ -41,4 +41,4 @@ endif
 hi Normal cterm=NONE ctermbg=NONE
 hi StatusLine cterm=NONE ctermbg=NONE
 hi LineNr cterm=NONE ctermbg=NONE
-hi NonText cterm=NONE ctermbg=NONE ctermfg=black
+hi NonText cterm=NONE ctermbg=233 ctermfg=233
